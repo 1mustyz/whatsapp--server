@@ -1,0 +1,24 @@
+{
+  "name": "whatsapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+   "start": "node index",
+   "dev": "nodemon index"
+  },
+  "repository": "git+https://github.com/1mustyz/whatsapp--server.git",
+  "author": "1mustyz <onemusty.z@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1mustyz/whatsapp--server/issues"
+  },
+  "homepage": "https://github.com/1mustyz/whatsapp--server#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mongoose": "^6.5.2",
+    "nodemon": "^2.0.19",
+    "socket.io": "^4.5.1"
+  }
+}
