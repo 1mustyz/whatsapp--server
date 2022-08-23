@@ -2,14 +2,15 @@ const express = require("express")
 let http = require('http')
 const cors = require('cors')
 const mongoose = require('mongoose')
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3001
 const app = express()
 let server = http.createServer(app)
 const { Server } = require("socket.io");
 const io = new Server(server);
+const router = express.Router();
 
-app.use(express.json)
-app.use(cors)
+app.use(express.json())
+app.use(cors())
 
 let clients = {}
 
@@ -31,11 +32,12 @@ io.on('connection', (socket) => {
 
 
   });
+  // console.log(router)
 
-  app.route('/test').get((req,res)=> {
-    res.json('app started')
+  app.get("/check",(req,res)=> {
+    return res.json('app started')
   })
 
-server.listen(port,'0.0.0.0' ,()=>{
+app.listen(port,'0.0.0.0' ,()=>{
     console.log("server started")
 })
